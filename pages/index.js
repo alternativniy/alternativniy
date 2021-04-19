@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
 		<Link href="/about">Ссылка на About</Link>
+		<span>Hello World!</span>
     </div>
   )
 }
