@@ -1,0 +1,32 @@
+@import "../sass/var"
+
+.container
+	margin-top: 20px
+
+	> div
+		align-items: center
+		transition-timing-function: linear !important
+		-webkit-transition-timing-function: linear !important
+
+.slide
+	height: auto
+	max-width: 200px 
+	height: 115px
+	display: flex
+	justify-content: center
+	align-items: center	
+
+	padding: 15px
+	background-color: #383838
+	box-shadow: $box_shadow
+	border-radius: 3px
+
+	transition: transform 0.6s ease
+
+	&:hover
+		transform: scale(1.1, 1.1) translateY(-10px)
+
+	img
+		max-width: 100%
+		max-height: 100%
+		object-fit: contain

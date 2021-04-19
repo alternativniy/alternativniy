@@ -1,10 +1,7 @@
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
-
-export default function Home() {
+export default function About() {
   return (
-    <div className={styles.container}>
-		<Link href="/">Ссылка на главную</Link>
+    <div className="about_page">
+      <h1>This is a about page CAAMOOOON</h1>
     </div>
   )
 }
