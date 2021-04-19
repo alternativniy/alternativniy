@@ -1,11 +1,12 @@
 import Call from '../img/call.svg'
+import Github from '../public/img/github.svg'
 import {motion} from 'framer-motion'
 
 import styles from '../styles/components/phone.module.sass'
 
 export default function Phone() {
 	return (
-		<>
+		<div className={styles.container}>
 			<a className={styles.phone_block} href="tel:+77473795592">
 				<motion.div 
 					animate={{
@@ -15,7 +16,6 @@ export default function Phone() {
 					transition={{
 						duration: 1,
 						ease: "easeInOut",
-						//times: [1, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2],
 						repeat: 'Infinity',
 						repeatType: 'loop',
 						repeatDelay: 1
@@ -26,6 +26,9 @@ export default function Phone() {
 					+7 (747) 379 5592
 				</span>
 			</a>
-		</>
+			<a href="https://github.com/alternativniy/" target="_blank">
+				<Github className={styles.github} />
+			</a>
+		</div>
 	)
 }

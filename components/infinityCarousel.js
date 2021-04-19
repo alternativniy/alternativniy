@@ -41,13 +41,12 @@ export default function infinityCarousel(props) {
 			autoplay={{
 				delay: 0,
 				disableOnInteraction: false,
-				//waitForTransition: false
 			}}
 			longSwipes={false}
 			freeMode={true}
 			speed={3000}
-			preloadImages={true}
-			lazy={{loadOnTransitionStart: true, loadPrevNext: true, loadPrevNextAmount: 3}}
+			preloadImages={false}
+			//lazy={{loadOnTransitionStart: true, loadPrevNext: true, loadPrevNextAmount: 10}}
 			onSwiper={(swiper) => setSwiper(swiper)}
 		>
 			{props.items.map((item, key) =>
@@ -58,8 +57,7 @@ export default function infinityCarousel(props) {
 					href={item.url}
 					target="_blank"
 				>
-					<img className="swiper-lazy" data-src={item.img} alt={item.name} />
-					<div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					<img src={item.img} alt={item.name} />
 				</SwiperSlide>
 			)}
 		</Swiper>

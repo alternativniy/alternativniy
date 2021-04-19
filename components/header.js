@@ -14,20 +14,16 @@ export default function Header(props) {
 	const [mobile, setMobile] = useState(false)
 
 	const checkMobile = () => {
-		
-		
 		if( window_width() <= 575 && !mobile ) {
-			console.log('mobile')
 			setMobile(true)
 		}	
 		else if(window_width() > 575 && mobile) {
-			console.log('desk')
 			setMobile(false)
 		}	
 	}
 
 	useEffect(() => {
-		checkMobile()
+		checkMobile(mobile)
 		window.addEventListener('resize', checkMobile)
 
 		return () => window.removeEventListener('resize', checkMobile)
