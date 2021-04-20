@@ -1,25 +1,30 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import {Nav, Navbar} from 'react-bootstrap'
+import { Nav, Navbar } from 'react-bootstrap'
 
 import BackButton from "./backButton"
 import Phone from './phone'
+import PropTypes from 'prop-types';
 
 import styles from "../styles/components/header.module.sass"
+
+Header.propTypes = {
+	page_name: PropTypes.string.isRequired
+}
 
 export default function Header(props) {
 	const hasWindow = typeof window !== 'undefined';
 
-	const [links, setLinks] = useState(["Home", "PHP"])
+	const [links] = useState(["Home", "PHP"])
 	const [mobile, setMobile] = useState(false)
 
 	const checkMobile = () => {
-		if( window_width() <= 575 && !mobile ) {
+		if (window_width() <= 575 && !mobile) {
 			setMobile(true)
-		}	
-		else if(window_width() > 575 && mobile) {
+		}
+		else if (window_width() > 575 && mobile) {
 			setMobile(false)
-		}	
+		}
 	}
 
 	useEffect(() => {
@@ -33,7 +38,7 @@ export default function Header(props) {
 		let button = document.querySelector('.i_nav_button')
 		let navbar = document.querySelector('.i_navbar_nav')
 
-		if(button && navbar && button.offsetHeight !== 0 && navbar.classList.contains('show'))
+		if (button && navbar && button.offsetHeight !== 0 && navbar.classList.contains('show'))
 			button.click()
 	}
 
@@ -43,7 +48,7 @@ export default function Header(props) {
 		}
 	}
 
-	return(
+	return (
 		<Navbar variant="dark" expand="sm">
 			{(mobile && props.page_name !== 'Home') &&
 				<BackButton />
@@ -56,14 +61,14 @@ export default function Header(props) {
 				<Phone />
 			}
 			<Navbar.Toggle className={styles.i_nav_button + " i_nav_button"} aria-controls="basic-navbar-nav" />
-			
+
 			<Navbar.Collapse id="basic-navbar-nav" className="i_navbar_nav">
 				<Nav className="mr-auto">
-					{links.map((item, index) => 
-						<Link href={item == 'Home' ? '/' : '/'+item.toLowerCase()} key={index} passHref>
+					{links.map((item, index) =>
+						<Link href={item == 'Home' ? '/' : '/' + item.toLowerCase()} key={index} passHref>
 							<Nav.Link active={props.page_name == item ? true : false} onClick={hideMobileMenu}>{item}</Nav.Link>
 						</Link>
-						)
+					)
 					}
 				</Nav>
 			</Navbar.Collapse>

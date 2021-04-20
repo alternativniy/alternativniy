@@ -6,6 +6,12 @@ import SwiperCore, { Lazy, Autoplay } from 'swiper/core';
 import 'swiper/swiper-bundle.css';
 import styles from '../styles/components/infinityCarousel.module.sass'
 
+import PropTypes from 'prop-types';
+
+infinityCarousel.propTypes = {
+	items: PropTypes.array
+}
+
 SwiperCore.use([Lazy, Autoplay]);
 
 export default function infinityCarousel(props) {
@@ -50,7 +56,7 @@ export default function infinityCarousel(props) {
 			onSwiper={(swiper) => setSwiper(swiper)}
 		>
 			{props.items.map((item, key) =>
-				<SwiperSlide 
+				<SwiperSlide
 					className={styles.slide}
 					key={key}
 					tag="a"

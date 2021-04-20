@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AnimatePresence, motion  } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Carousel from '../components/infinityCarousel'
 import Grid from '../components/adaptiveGrid'
@@ -54,23 +54,23 @@ let data = [
 	},
 ]
 
-export default function projectCarouesel () {
-	const [items, setItems] = useState(data)
+export default function projectCarouesel() {
+	const [items] = useState(data)
 	const [switchC, setSwitchC] = useState(false)
 
 	const calcHeightMainBlock = () => {
-		if(typeof window !== 'undefined' && document.querySelector('.projectBlockInit') !== null) 
+		if (typeof window !== 'undefined' && document.querySelector('.projectBlockInit') !== null)
 			return document.querySelector('.projectBlockInit').offsetHeight
 	}
 
 	return (
 		<>
 			<AnimatePresence exitBeforeEnter>
-				<motion.div 
-					className={styles.projectBlock + ' projectBlockInit'}					
-					animate={{height: 'auto', opacity: 1}} 
-					initial={{height: calcHeightMainBlock(), opacity: 0 }} 
-					transition={{ duration: 0.4, }} 
+				<motion.div
+					className={styles.projectBlock + ' projectBlockInit'}
+					animate={{ height: 'auto', opacity: 1 }}
+					initial={{ height: calcHeightMainBlock(), opacity: 0 }}
+					transition={{ duration: 0.4, }}
 					key={switchC}
 				>
 					{!switchC
