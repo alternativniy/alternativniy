@@ -21,7 +21,7 @@ export default function appHead() {
 				type="image/png"
 				sizes="32x32"
 			/>
-			<link rel="apple-touch-icon" href="/apple-icon.png"></link>
+			<link rel="apple-touch-icon" href="/apple-icon-180x180.png"></link>
 			<meta name="theme-color" content="#bb86fc" />
 		</Head>
 	)
