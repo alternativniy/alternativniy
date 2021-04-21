@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import Image from 'next/image'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Lazy, Autoplay } from 'swiper/core';
+
 
 import 'swiper/swiper-bundle.css';
 import styles from '../styles/components/infinityCarousel.module.sass'
@@ -63,7 +65,7 @@ export default function infinityCarousel(props) {
 					href={item.url}
 					target="_blank"
 				>
-					<img src={item.img} alt={item.name} />
+					<Image src={item.img} alt={item.name} layout="fill" />
 				</SwiperSlide>
 			)}
 		</Swiper>

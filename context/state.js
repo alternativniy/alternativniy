@@ -24,8 +24,6 @@ export function AppWrapper({ children }) {
 				localData.curPage = link.name
 		})
 
-		console.log(localData)
-
 		setData(localData)
 		setLoading(true)
 	}	
