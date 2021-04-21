@@ -7,9 +7,22 @@ export default function appHead() {
 	return (
 		<Head>
 			<title>{context.curPage}</title>
-			<link rel="icon" href="/favicon.ico" />
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
-			<meta name="google-site-verification" content="WI2ayAhL4BSxEWOatccvZwouzQ1yeG9aW5uzfwo8xEo" />
+			<link rel="manifest" href="/manifest.json" />
+			<link
+				href="/icon/favicon-16x16.png"
+				rel="icon"
+				type="image/png"
+				sizes="16x16"
+			/>
+			<link
+				href="/icon/favicon-32x32.png"
+				rel="icon"
+				type="image/png"
+				sizes="32x32"
+			/>
+			<link rel="apple-touch-icon" href="/apple-icon.png"></link>
+			<meta name="theme-color" content="#bb86fc" />
 		</Head>
 	)
 }
