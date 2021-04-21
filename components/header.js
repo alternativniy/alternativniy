@@ -1,21 +1,19 @@
 import Link from "next/link"
+import { useRouter } from 'next/router'
 import { useEffect, useState } from "react"
 import { Nav, Navbar } from 'react-bootstrap'
+import {useAppContext} from '../context/state'
 
 import BackButton from "./backButton"
 import Phone from './phone'
-import PropTypes from 'prop-types';
 
 import styles from "../styles/components/header.module.sass"
 
-Header.propTypes = {
-	page_name: PropTypes.string.isRequired
-}
+function Header() {
+	const context = useAppContext()
+	const router = useRouter()
 
-export default function Header(props) {
 	const hasWindow = typeof window !== 'undefined';
-
-	const [links] = useState(["Home", "PHP"])
 	const [mobile, setMobile] = useState(false)
 
 	const checkMobile = () => {
@@ -50,7 +48,7 @@ export default function Header(props) {
 
 	return (
 		<Navbar variant="dark" expand="sm">
-			{(mobile && props.page_name !== 'Home') &&
+			{(mobile && router.route !== '/') &&
 				<BackButton />
 			}
 			<Link href='/' passHref>
@@ -64,9 +62,9 @@ export default function Header(props) {
 
 			<Navbar.Collapse id="basic-navbar-nav" className="i_navbar_nav">
 				<Nav className="mr-auto">
-					{links.map((item, index) =>
-						<Link href={item == 'Home' ? '/' : '/' + item.toLowerCase()} key={index} passHref>
-							<Nav.Link active={props.page_name == item ? true : false} onClick={hideMobileMenu}>{item}</Nav.Link>
+					{context.menu.links.map((item) =>
+						<Link href={item.url} key={item._id} passHref>
+							<Nav.Link active={ (item.url == router.route) ? true : false} onClick={hideMobileMenu}>{item.name}</Nav.Link>
 						</Link>
 					)
 					}
@@ -78,3 +76,5 @@ export default function Header(props) {
 		</Navbar>
 	)
 }
+
+export default Header;

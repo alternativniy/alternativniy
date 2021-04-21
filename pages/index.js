@@ -1,3 +1,4 @@
+import {useAppContext} from '../context/state'
 import ProjectCarousel from '../page_components/projectCarousel'
 
 import styles from '../styles/home.module.sass'

@@ -16,7 +16,7 @@ async function database(req, res, next) {
 
   req.dbClient = client;
 
-  req.db = client.db('sample_restaurants');
+  req.db = client.db('portfolio');
 
   return next();
 
