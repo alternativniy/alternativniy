@@ -1,31 +1,32 @@
 {
-  "name": "rpp",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export"
-  },
-  "dependencies": {
-    "bootstrap": "^4.6.0",
-    "framer-motion": "^3.10.5",
-    "mongodb": "^3.6.6",
-    "next": "10.0.9",
-    "next-connect": "^0.10.1",
-    "next-pwa": "^5.0.6",
-    "nextjs-progressbar": "0.0.8",
-    "prop-types": "^15.7.2",
-    "react": "17.0.1",
-    "react-bootstrap": "^1.5.2",
-    "react-dom": "17.0.1",
-    "sass": "^1.32.8",
-    "swiper": "^6.5.3"
-  },
-  "devDependencies": {
-    "babel-plugin-inline-react-svg": "^2.0.1",
-    "eslint": "^7.24.0",
-    "eslint-plugin-react": "^7.23.2"
-  }
+	"name": "rpp",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"export": "next export"
+	},
+	"dependencies": {
+		"bootstrap": "^4.6.0",
+		"framer-motion": "^3.10.5",
+		"mongodb": "^3.6.6",
+		"next": "10.0.9",
+		"next-compose-plugins": "^2.2.1",
+		"next-connect": "^0.10.1",
+		"next-pwa": "^5.2.14",
+		"nextjs-progressbar": "0.0.8",
+		"prop-types": "^15.7.2",
+		"react": "17.0.1",
+		"react-bootstrap": "^1.5.2",
+		"react-dom": "17.0.1",
+		"sass": "^1.32.8",
+		"swiper": "^6.5.3"
+	},
+	"devDependencies": {
+		"babel-plugin-inline-react-svg": "^2.0.1",
+		"eslint": "^7.24.0",
+		"eslint-plugin-react": "^7.23.2"
+	}
 }
